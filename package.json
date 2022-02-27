@@ -1,0 +1,25 @@
+{
+  "name": "annenbergmedia_slackbot",
+  "version": "1.0.0",
+  "description": "Slackbot for USC Annenberg Media",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashvijaju/annenbergmedia_slackbot.git"
+  },
+  "author": "Yashvi Jaju",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yashvijaju/annenbergmedia_slackbot/issues"
+  },
+  "homepage": "https://github.com/yashvijaju/annenbergmedia_slackbot#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15",
+    "slackbots": "^1.2.0"
+  }
+}
