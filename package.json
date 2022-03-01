@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/yashvijaju/annenbergmedia_slackbot#readme",
   "dependencies": {
+    "@slack/bolt": "^3.10.0",
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
-    "nodemon": "^2.0.15",
-    "slackbots": "^1.2.0"
+    "nodemon": "^2.0.15"
   }
 }
