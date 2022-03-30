@@ -1,4 +1,4 @@
-const { App, subtype } = require('@slack/bolt');
+const { App  } = require('@slack/bolt');
 require('dotenv').config();
 
 const app = new App({
@@ -224,6 +224,38 @@ app.event('app_mention', async ({ event, say }) => {
     await say({"attachments": [{"image_url": "https://i.imgur.com/iRcxVrF.jpg", "text": ""}], "text": "Sorry, I don't understand. Would you please write down what you're trying to do on this form: https://bit.ly/2TVsFXh so I can learn and be more useful in the future? \n Or can you rephrase the query?"})
   }
 });
+
+app.event("app_home_opened", async ({ payload, client }) => {
+  const userId = payload.user;
+
+  try {
+    // Call the views.publish method using the WebClient passed to listeners
+    const result = await client.views.publish({
+      user_id: userId,
+      view: {
+        // Home tabs must be enabled in your app configuration page under "App Home"
+        "type": "home",
+        "blocks": [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "*Welcome to Annenberg Media Center, <@" + userId + ">*\n\nI'm a brand new bot to help out in the Media Center, so every time you use me it helps me improve. Ask me about anything tech in the Annenberg Media Center: making stories for ATVN, ARN, social and more!\n"
+            }
+          },
+          {
+            "type": "divider"
+          }
+        ]
+      }
+    });
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
+
+
 
 (async () => {
   // Start your app
