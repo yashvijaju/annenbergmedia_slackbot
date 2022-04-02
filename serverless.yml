@@ -13,11 +13,5 @@ functions:
       - http:
           path: slack/events
           method: post
-  hello:
-    handler: app2.handler
-    events:
-      - http:
-          path: /hello
-          method: get
 plugins:
   - serverless-offline
